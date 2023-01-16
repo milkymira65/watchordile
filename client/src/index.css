@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@200&display=swap");
+
+* {
+  font-family: "League Spartan", sans-serif;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+
+
+
+
+/* .runtime {
+  font-family: "Monoton", cursive;
+} */
+
+.paginateButton {
+  font-size: 2.5rem;
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15%;
+  margin-bottom: 15%;
+}
+
+.paginateButton a {
+  color: aliceblue;
+}
+
+.previousButton .nextButton {
+  width: 80%;
+  padding: 1%;
+  margin: 1%;
+}
+
+* {
+  font-family: "League Spartan", sans-serif;
+}
+
+.logo {
+  font-family: "Abril Fatface", cursive;
+}
+* {
+  object-fit: cover;
+}

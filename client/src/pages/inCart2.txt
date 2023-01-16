@@ -1,0 +1,98 @@
+import {
+    Box,
+    Button,
+    Text,
+    Image,
+    Flex,
+    Spacer,
+   
+  } from "@chakra-ui/react";
+import { createContext, useContext } from "react";
+import Provider from "./cartContext";
+import { ProductDetail1 } from "./products-detail1";
+ 
+   
+  
+  export function CART() {
+    const { mycart } = useContext(Provider)
+    
+  
+    return (
+        
+        // Navbar ==================================================================================
+        <Box as = "Big-Box"> 
+            <Box as ="nav" bg="bgsurface" boxShadow = "lg" w="100%" >
+        <Flex justify = "flex-end">
+            <Button  fontSize="15" variant="ghost" color="#AA8B56" >HOME</Button>
+            <Button  fontSize="15" variant="ghost" color="#AA8B56">PRODUCTS</Button>
+            <Button  fontSize="15" variant="ghost" color="#AA8B56">ACCESSORIES</Button>
+            <Button  fontSize="15" variant="ghost" color="#AA8B56">LOG IN</Button>
+            <Button  fontSize="15" variant="ghost" color="#AA8B56">   <Image boxSize="30px" src="https://img.icons8.com/dotty/512/favorite-cart.png" className="pic2" alt=""/>    </Button>
+        </Flex>
+    </Box>
+
+    {/* กล่อง Cart============================================================================================ */}
+    <Flex  justify='center' mt="10vh" >
+        <Box border="1px" color="white" w = "70vw" h = "70vh" bg = "white"  position='relative'>
+        <Text as ="b" color="Black" fontSize='36px' p='5'>Cart</Text>
+        {/* กล่อง Title แรก ==================================================================================*/}
+        <Box border="1px" borderBottomColor="#DEDEDE" >    
+        <Flex minWidth='max-content' alignItems='center' >
+  <Box ml={[-5,-2,2]}>
+    <Box as='b' color="#AA8b56" fontSize={{base:'18px',sm:'10px', md:'12px', lg:'18px'}}>PRODUCT NAME</Box>
+  </Box>
+  <Spacer />
+  <Flex bg="white">
+    <Box mr={[2,8,20]}><Text as ="b" color="#AA8b56" fontSize={{base:'18px',sm:'10px', md:'12px', lg:'18px'}}>PRICE</Text></Box>
+    <Box mr={[2,8,20]}><Text as ="b" color="#AA8b56" fontSize={{base:'18px',sm:'10px', md:'12px', lg:'18px'}} >QUANTITY</Text> </Box>
+    <Box mr={[2,8,20]}><Text as ="b" color="#AA8b56" fontSize={{base:'18px',sm:'10px', md:'12px', lg:'18px'}}>TOTAL</Text> </Box>
+    
+ 
+  </Flex>
+</Flex> 
+        {/* กล่องรายการสินค้า============================================================================== */}
+      
+
+        {mycart.map((value)=>(
+          <Box mt="5" bg="tomato" value={value} cart={mycart} setCart>{value.name}</Box>
+        ))}
+        </Box >    
+        
+         
+      
+       
+        </Box>
+        
+        </Flex>
+        
+      
+
+         {/* Footer============================================================================================= */}
+
+       <Flex justifyContent="center" color= "#AA8B56" mr="100" ml={[50,100,300]} mt="300">
+          <Text fontSize={{base:'15px',sm:'20px', md:'20px', lg:'px'}}>Copyright©2022 Watchodile.All Right Reserved.</Text>
+          </Flex>
+     
+        </Box>
+        
+    )}
+
+
+
+
+
+        function deleteItem(value, event){
+      console.log(value)
+      const itemDelete = contextValue.mycart.filter((value, i) => {
+        console.log("แนนนี่ตื่นๆ")
+        return i !== value;
+      }); 
+  contextValue.setmyCart(itemDelete)
+    }
+
+    onClick= {(event)=>{deleteItem(value, event)}}
+
+
+    onClick= {()=>{contextValue.setmyCart(contextValue.mycart.filter(value=>value.id !== value[0].id))}}  
+  
+    

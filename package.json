@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.13",
+    "react-icons": "^4.7.1",
+    "react-tsparticles": "^2.5.3",
+    "tsparticles": "^2.5.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.28.1"
+  },
+  "scripts": {}
+}
